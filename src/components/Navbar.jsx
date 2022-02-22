@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import icon from '../images/cryptocurrency.png';
 
 const Navbar = () => {
-    const [activeMenu, setActiveMenu] = useState(false);
-    const [screenSize, setScreenSize] = useState(undefined);
+    const [activeMenu, setActiveMenu] = useState(true);
+    const [screenSize, setScreenSize] = useState(null);
 
     useEffect(() => {
         const handleResize = () => setScreenSize(window.innerWidth);
@@ -19,10 +19,10 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        if (screenSize <= 800) {
-        setActiveMenu(false);
+        if (screenSize <= 800) {    
+            setActiveMenu(false);
         } else {
-        setActiveMenu(true);
+            setActiveMenu(true);
         }
     }, [screenSize]);
 
@@ -37,7 +37,8 @@ const Navbar = () => {
                 
             </div>
 
-            <Menu theme='dark'>
+            {activeMenu && (
+                <Menu theme='dark'>
                     <Menu.Item icon={<HomeOutlined />} >
                         <Link to='/'>Home</Link>
                     </Menu.Item>
@@ -51,6 +52,7 @@ const Navbar = () => {
                         <Link to='/news'>News</Link>
                     </Menu.Item>
                 </Menu>
+            )}
         </div>
     )
 }

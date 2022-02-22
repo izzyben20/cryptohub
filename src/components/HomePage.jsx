@@ -13,8 +13,6 @@ const HomePage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
-  console.log(globalStats);
-
   if (isFetching) return <Loader />;
 
   return (
