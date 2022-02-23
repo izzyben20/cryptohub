@@ -40,16 +40,16 @@ const Navbar = () => {
             {activeMenu && (
                 <Menu theme='dark'>
                     <Menu.Item icon={<HomeOutlined />} >
-                        <Link to='/' onClick={() => setActiveMenu(!activeMenu)}>Home</Link>
+                        <Link to='/' >Home</Link>
                     </Menu.Item>
                     <Menu.Item icon={<FundOutlined />} >
-                        <Link to='/cryptocurrencies' onClick={() => setActiveMenu(!activeMenu)}>Cryptocurrencies</Link>
+                        <Link to='/cryptocurrencies' >Cryptocurrencies</Link>
                     </Menu.Item>
                     <Menu.Item icon={<MoneyCollectOutlined />} >
-                        <Link to='/exchanges' onClick={() => setActiveMenu(!activeMenu)}>Exchanges</Link>
+                        <Link to='/exchanges' >Exchanges</Link>
                     </Menu.Item>
                     <Menu.Item icon={<BulbOutlined />} >
-                        <Link to='/news' onClick={() => setActiveMenu(!activeMenu)}>News</Link>
+                        <Link to='/news' >News</Link>
                     </Menu.Item>
                 </Menu>
             )}
